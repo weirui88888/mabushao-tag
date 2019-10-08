@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js',
+    filename: process.env.IS_HASH === 'true' ? process.env.npm_package_name + '.[name].[chunkhash].js' : 'build.js',
     libraryTarget: 'umd'
   },
   module: {
